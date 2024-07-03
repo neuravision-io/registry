@@ -56,7 +56,7 @@ jobs:
       
     - name: Trigger Portainer Webhook
       if: success()
-      run: curl -X POST ${{secrets.PORTAINER_AKOGARE_NG_GATEWAY_WEBHOOK}}
+      run: curl -X POST ${{secrets.PORTAINER_AKOGARE_NG_EUREKA_WEBHOOK}}
   dependency-submission:
 
     runs-on: ubuntu-latest
