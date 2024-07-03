@@ -40,19 +40,19 @@ jobs:
 
     - name: Build Docker image latest
       if: success()
-      run: docker build -t ${{ secrets.DOCKER_REGISTRY_URL }}/akogare-ng-gateway:latest .
+      run: docker build -t ${{ secrets.DOCKER_REGISTRY_URL }}/akogare-ng-eureka:latest .
 
     - name: Build Docker image version release
       if: success()
-      run: docker build -t ${{ secrets.DOCKER_REGISTRY_URL }}/akogare-ng-gateway:0.0.1-RELEASE .
+      run: docker build -t ${{ secrets.DOCKER_REGISTRY_URL }}/akogare-ng-eureka:0.0.1-RELEASE .
       
     - name: Push Docker image latest
       if: success()
-      run: docker push ${{ secrets.DOCKER_REGISTRY_URL }}/akogare-ng-gateway:latest
+      run: docker push ${{ secrets.DOCKER_REGISTRY_URL }}/akogare-ng-eureka:latest
 
     - name: Push Docker image version release
       if: success()
-      run: docker push ${{ secrets.DOCKER_REGISTRY_URL }}/akogare-ng-gateway:0.0.1-RELEASE
+      run: docker push ${{ secrets.DOCKER_REGISTRY_URL }}/akogare-ng-eureka:0.0.1-RELEASE
       
     - name: Trigger Portainer Webhook
       if: success()
